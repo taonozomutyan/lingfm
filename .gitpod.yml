@@ -1,0 +1,12 @@
+image: gitpod/workspace-mysql
+ports:
+- port: 8001
+  onOpen: notify
+- port: 3306
+  onOpen: ignore
+tasks:
+- name: Init
+  command: >
+    apachectl start;
+    mysql -e "SET PASSWORD = '123456';";
+    clear;
